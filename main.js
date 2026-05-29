@@ -49,13 +49,16 @@
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // Counter animation
+  // Counter animation — replays each time stats scroll into view
   const statNumbers = document.querySelectorAll('.hero__stat-num[data-count]');
-  let countersAnimated = false;
+
+  function resetCounters() {
+    statNumbers.forEach(el => {
+      el.textContent = '0';
+    });
+  }
 
   function animateCounters() {
-    if (countersAnimated) return;
-
     statNumbers.forEach(el => {
       const target = parseInt(el.dataset.count, 10);
       const duration = 2000;
@@ -70,18 +73,20 @@
 
       requestAnimationFrame(update);
     });
-
-    countersAnimated = true;
   }
 
   const heroStats = document.querySelector('.hero__stats');
   if (heroStats) {
     const statsObserver = new IntersectionObserver(
       entries => {
-        if (entries[0].isIntersecting) {
-          animateCounters();
-          statsObserver.disconnect();
-        }
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            resetCounters();
+            animateCounters();
+          } else {
+            resetCounters();
+          }
+        });
       },
       { threshold: 0.5 }
     );
