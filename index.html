@@ -33,6 +33,7 @@
       <ul class="nav__menu" id="navMenu">
         <li><a href="#about" class="nav__link">關於我們</a></li>
         <li><a href="#services" class="nav__link">營運內容</a></li>
+        <li><a href="#showcase" class="nav__link">研發實境</a></li>
         <li><a href="#cases" class="nav__link">案例介紹</a></li>
         <li><a href="#team" class="nav__link">研發團隊</a></li>
         <li><a href="#careers" class="nav__link">人才招募</a></li>
@@ -47,7 +48,7 @@
       <div class="hero__bg">
         <img
           class="hero__bg-img"
-          src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1920&q=80"
+          src="https://images.unsplash.com/photo-1579829366248-204fe841e1fa?w=1920&q=85"
           alt=""
           aria-hidden="true"
         >
@@ -170,10 +171,22 @@
             </div>
           </div>
         </div>
+        <div class="about__gallery reveal">
+          <figure class="about__gallery-item">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&q=85" alt="研發團隊於實驗室進行無人載具組裝測試" loading="lazy">
+            <figcaption>實驗室組裝測試</figcaption>
+          </figure>
+          <figure class="about__gallery-item about__gallery-item--wide">
+            <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=1200&q=85" alt="固定翼無人載具外場飛行測試" loading="lazy">
+            <figcaption>外場飛行驗證</figcaption>
+          </figure>
+          <figure class="about__gallery-item">
+            <img src="https://images.unsplash.com/photo-1535378918542-46071498a8a0?w=700&q=85" alt="碳纖維複合材料原型精密加工" loading="lazy">
+            <figcaption>複材原型加工</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
-
-    <!-- Services -->
     <section class="section services" id="services">
       <div class="container">
         <div class="section__header section__header--center">
@@ -185,7 +198,7 @@
           <article class="service-card reveal">
             <div class="service-card__image">
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                src="https://images.unsplash.com/photo-1565034949262-896418fd22e2?w=900&q=85"
                 alt="碳纖維複合材料無人載具機身製作"
                 loading="lazy"
               >
@@ -207,7 +220,7 @@
           <article class="service-card reveal reveal--delay">
             <div class="service-card__image">
               <img
-                src="https://images.unsplash.com/photo-1527977966374-5a1dd82668b8?w=800&q=80"
+                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900&q=85"
                 alt="無人載具飛控系統與次系統整合測試"
                 loading="lazy"
               >
@@ -264,6 +277,75 @@
       </div>
     </section>
 
+    <!-- Showcase Gallery -->
+    <section class="section showcase" id="showcase">
+      <div class="container">
+        <div class="section__header section__header--center">
+          <span class="section__tag">R&D Gallery</span>
+          <h2 class="section__title">研發實境</h2>
+          <p class="section__desc">從載體設計、複材製程到外場飛測，一窺無人載具研發的核心場景（示意照片）</p>
+        </div>
+        <div class="showcase__grid reveal">
+          <figure class="showcase__item showcase__item--large">
+            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1200&q=85" alt="專業級多旋翼無人機空中飛行" loading="lazy">
+            <figcaption>
+              <span class="showcase__label">飛行測試</span>
+              <span class="showcase__title">多旋翼平台外場驗證</span>
+            </figcaption>
+          </figure>
+          <figure class="showcase__item">
+            <img src="https://images.unsplash.com/photo-1524146454424-9d38f737e556?w=800&q=85" alt="工程師操作專業無人機進行任務規劃" loading="lazy">
+            <figcaption>
+              <span class="showcase__label">任務規劃</span>
+              <span class="showcase__title">地面站操作</span>
+            </figcaption>
+          </figure>
+          <figure class="showcase__item">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=85" alt="研發人員使用 CAD 進行載具結構設計" loading="lazy">
+            <figcaption>
+              <span class="showcase__label">結構設計</span>
+              <span class="showcase__title">CAD / FEA 分析</span>
+            </figcaption>
+          </figure>
+          <figure class="showcase__item showcase__item--wide">
+            <img src="https://images.unsplash.com/photo-1527977966374-5a1dd82668b8?w=1200&q=85" alt="無人機搭載光電載荷進行航拍偵測" loading="lazy">
+            <figcaption>
+              <span class="showcase__label">載荷整合</span>
+              <span class="showcase__title">光電吊艙航拍</span>
+            </figcaption>
+          </figure>
+          <figure class="showcase__item">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85" alt="無人載具複合材料機身精密製作" loading="lazy">
+            <figcaption>
+              <span class="showcase__label">複材製程</span>
+              <span class="showcase__title">碳纖維機身成型</span>
+            </figcaption>
+          </figure>
+          <figure class="showcase__item">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=85" alt="衛星與通訊鏈路技術示意，支援無人載具資料傳輸" loading="lazy">
+            <figcaption>
+              <span class="showcase__label">通訊鏈路</span>
+              <span class="showcase__title">資料鏈整合</span>
+            </figcaption>
+          </figure>
+          <figure class="showcase__item showcase__item--tall">
+            <img src="https://images.unsplash.com/photo-1506947411477-ad0e2c691892?w=800&q=85" alt="無人機於山區進行長航時飛行任務" loading="lazy">
+            <figcaption>
+              <span class="showcase__label">長航時任務</span>
+              <span class="showcase__title">固定翼巡航</span>
+            </figcaption>
+          </figure>
+          <figure class="showcase__item">
+            <img src="https://images.unsplash.com/photo-1581094794359-550bbf891b93?w=800&q=85" alt="工程師於無塵環境進行次系統電路測試" loading="lazy">
+            <figcaption>
+              <span class="showcase__label">次系統</span>
+              <span class="showcase__title">電路整合測試</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- Cases -->
     <section class="section cases" id="cases">
       <div class="container">
@@ -276,7 +358,7 @@
           <article class="case-card reveal">
             <div class="case-card__image">
               <img
-                src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80"
+                src="https://images.unsplash.com/photo-1506947411477-ad0e2c691892?w=900&q=85"
                 alt="HK-100 概念偵察無人載具原型"
                 loading="lazy"
               >
@@ -303,7 +385,7 @@
           <article class="case-card reveal reveal--delay">
             <div class="case-card__image">
               <img
-                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80"
+                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=900&q=85"
                 alt="電力設施無人機巡檢作業"
                 loading="lazy"
               >
@@ -330,7 +412,7 @@
           <article class="case-card reveal reveal--delay-2">
             <div class="case-card__image">
               <img
-                src="https://images.unsplash.com/photo-1579829366248-204fe841e1fa?w=800&q=80"
+                src="https://images.unsplash.com/photo-1524146454424-9d38f737e556?w=900&q=85"
                 alt="HK-LIFT VTOL 垂直起降實驗平台"
                 loading="lazy"
               >
@@ -394,6 +476,12 @@
             </div>
             <h4>測試驗證組</h4>
             <p>2 人 · 飛行測試、環境驗證、品保</p>
+          </div>
+        </div>
+        <div class="team__banner reveal">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1400&q=85" alt="海德克科技研發團隊協作場景" loading="lazy">
+          <div class="team__banner-overlay">
+            <p class="team__banner-text">12 人核心團隊 · 跨結構、飛控、載荷、飛測四大專業組別</p>
           </div>
         </div>
         <div class="team__grid">
