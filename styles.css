@@ -248,7 +248,7 @@ img {
   z-index: 2;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.4;
+  opacity: 0.22;
 }
 
 .hero__glow--1 {
@@ -623,8 +623,8 @@ img {
 
 .showcase__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
   gap: 16px;
 }
 
@@ -1509,8 +1509,7 @@ img {
   }
 
   .showcase__item--large,
-  .showcase__item--wide,
-  .showcase__item--tall {
+  .showcase__item--wide {
     grid-column: span 1;
   }
 
