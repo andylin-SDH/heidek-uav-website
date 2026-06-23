@@ -106,8 +106,8 @@
       const link = document.querySelector(`.nav__link[href="#${id}"]`);
 
       if (link && scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach(l => l.style.color = '');
-        link.style.color = 'var(--color-accent)';
+        navLinks.forEach(l => l.classList.remove('nav__link--active'));
+        link.classList.add('nav__link--active');
       }
     });
   }
