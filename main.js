@@ -5,9 +5,7 @@
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
   const navLinks = document.querySelectorAll('.nav__link');
-  const contactForm = document.getElementById('contactForm');
 
-  // Header scroll effect
   function onScroll() {
     header.classList.toggle('header--scrolled', window.scrollY > 50);
   }
@@ -15,7 +13,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Mobile navigation
   navToggle.addEventListener('click', () => {
     const isOpen = navMenu.classList.toggle('active');
     navToggle.classList.toggle('active');
@@ -32,7 +29,6 @@
     });
   });
 
-  // Scroll reveal
   const revealElements = document.querySelectorAll('.reveal');
 
   const revealObserver = new IntersectionObserver(
@@ -49,51 +45,6 @@
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // Counter animation — replays each time stats scroll into view
-  const statNumbers = document.querySelectorAll('.hero__stat-num[data-count]');
-
-  function resetCounters() {
-    statNumbers.forEach(el => {
-      el.textContent = '0';
-    });
-  }
-
-  function animateCounters() {
-    statNumbers.forEach(el => {
-      const target = parseInt(el.dataset.count, 10);
-      const duration = 2000;
-      const start = performance.now();
-
-      function update(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target);
-        if (progress < 1) requestAnimationFrame(update);
-      }
-
-      requestAnimationFrame(update);
-    });
-  }
-
-  const heroStats = document.querySelector('.hero__stats');
-  if (heroStats) {
-    const statsObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            resetCounters();
-            animateCounters();
-          } else {
-            resetCounters();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    statsObserver.observe(heroStats);
-  }
-
-  // Active nav link on scroll
   const sections = document.querySelectorAll('section[id]');
 
   function highlightNav() {
@@ -113,20 +64,4 @@
   }
 
   window.addEventListener('scroll', highlightNav, { passive: true });
-
-  // Contact form
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-
-    const btn = contactForm.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.textContent = '已送出！';
-    btn.disabled = true;
-
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.disabled = false;
-      contactForm.reset();
-    }, 2500);
-  });
 })();
