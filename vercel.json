@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.hyperseek.com.tw" }],
+      "destination": "/holding.html"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "hyperseek.com.tw" }],
+      "destination": "/holding.html"
+    }
+  ]
+}
