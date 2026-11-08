@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <rect width="1200" height="800" fill="#211D1E"/>
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a3a28" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#sky)"/>
+  <rect x="0" y="0" width="420" height="800" fill="#211D1E"/>
+  <path d="M420 520C700 500 900 380 1200 320" stroke="rgba(255,255,255,0.25)" stroke-width="2" fill="none"/>
+  <path d="M420 540C650 530 850 440 1200 400" stroke="rgba(118,167,75,0.35)" stroke-width="2.5" fill="none"/>
+  <ellipse cx="900" cy="350" rx="380" ry="120" stroke="rgba(118,167,75,0.12)" stroke-width="1" fill="none"/>
+  <ellipse cx="900" cy="350" rx="300" ry="95" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
+  <ellipse cx="900" cy="350" rx="220" ry="70" stroke="rgba(118,167,75,0.2)" stroke-width="1" fill="none"/>
+  <circle cx="900" cy="350" r="5" fill="#76A74B"/>
+  <path d="M900 350 L980 310 L980 390 Z" fill="rgba(118,167,75,0.2)" stroke="rgba(118,167,75,0.4)" stroke-width="1"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="plume-a" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#76A74B" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#8BB863" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#76A74B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="plume-b" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="wing-g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#76A74B" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#76A74B" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="#211D1E"/>
+  <g opacity="0.35" stroke="rgba(255,255,255,0.06)" stroke-width="1">
+    <path d="M0 200H1200M0 400H1200M0 600H1200"/>
+    <path d="M200 0V800M500 0V800M800 0V800M1050 0V800"/>
+  </g>
+  <ellipse cx="220" cy="400" rx="160" ry="200" fill="url(#wing-g)" filter="url(#blur-soft)"/>
+  <path d="M120 280C200 300 340 360 520 400C340 440 200 500 120 520" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" fill="none"/>
+  <path d="M140 360C240 370 400 395 560 400C400 405 240 430 140 440" stroke="rgba(118,167,75,0.35)" stroke-width="2" fill="none"/>
+  <g transform="translate(180 400)">
+    <circle cx="0" cy="0" r="28" fill="rgba(255,255,255,0.08)" stroke="rgba(118,167,75,0.4)" stroke-width="1"/>
+    <circle cx="0" cy="0" r="8" fill="#76A74B" opacity="0.9"/>
+    <path d="M28 0L900 -140C700 0 700 0 900 140L28 0Z" fill="url(#plume-a)" opacity="0.85"/>
+    <path d="M28 -4L720 -100C560 0 560 0 720 104L28 4Z" fill="url(#plume-b)" opacity="0.9"/>
+    <path d="M32 0C280 -8 520 -6 760 0" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+    <path d="M32 0C280 12 520 18 820 28" stroke="rgba(118,167,75,0.45)" stroke-width="2" fill="none"/>
+    <path d="M32 0C300 -28 540 -32 860 -36" stroke="rgba(118,167,75,0.25)" stroke-width="1.5" fill="none"/>
+  </g>
+  <path d="M880 180L1020 220L960 280Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M920 520L1060 480L1000 560Z" fill="rgba(118,167,75,0.15)"/>
+</svg>

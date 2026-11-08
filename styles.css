@@ -243,14 +243,68 @@ img {
   z-index: 0;
 }
 
-.hero__bg-img {
+.hero__kv {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
+  background: var(--color-bg-dark);
+}
+
+.hero__kv-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 65% center;
+  object-position: 62% center;
+  opacity: 0.95;
+}
+
+.hero__kv-mark {
+  position: absolute;
+  right: clamp(5%, 12vw, 14%);
+  top: 50%;
+  transform: translateY(-48%);
+  width: clamp(140px, 22vw, 280px);
+  opacity: 0.14;
+  pointer-events: none;
+  filter: blur(0.3px);
+}
+
+.hero__kv-mark img {
+  width: 100%;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__kv-img {
+    animation: hero-kv-drift 28s ease-in-out infinite alternate;
+  }
+
+  .hero__kv::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(118, 167, 75, 0.06) 45%,
+      transparent 70%
+    );
+    animation: hero-kv-sheen 12s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes hero-kv-drift {
+  from { transform: scale(1) translateX(0); }
+  to { transform: scale(1.03) translateX(-1.5%); }
+}
+
+@keyframes hero-kv-sheen {
+  0%, 100% { opacity: 0.4; transform: translateX(-8%); }
+  50% { opacity: 0.85; transform: translateX(8%); }
 }
 
 .hero__overlay {
@@ -258,9 +312,23 @@ img {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(105deg, rgba(33, 29, 30, 0.94) 0%, rgba(33, 29, 30, 0.78) 42%, rgba(33, 29, 30, 0.45) 100%),
-    linear-gradient(to top, rgba(33, 29, 30, 0.9) 0%, transparent 45%),
-    radial-gradient(ellipse 60% 50% at 80% 40%, rgba(118, 167, 75, 0.08) 0%, transparent 70%);
+    linear-gradient(100deg, rgba(33, 29, 30, 0.94) 0%, rgba(33, 29, 30, 0.82) 38%, rgba(33, 29, 30, 0.35) 68%, rgba(33, 29, 30, 0.2) 100%),
+    linear-gradient(to top, rgba(33, 29, 30, 0.88) 0%, transparent 42%);
+}
+
+@media (max-width: 768px) {
+  .hero__kv-img {
+    object-position: 70% center;
+  }
+
+  .hero__kv-mark {
+    display: none;
+  }
+
+  .hero__overlay {
+    background:
+      linear-gradient(180deg, rgba(33, 29, 30, 0.92) 0%, rgba(33, 29, 30, 0.88) 100%);
+  }
 }
 
 .hero__grid {

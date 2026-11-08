@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <rect width="1200" height="800" fill="#211D1E"/>
+  <defs>
+    <linearGradient id="s-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#211D1E" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#211D1E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="800" fill="url(#s-fade)"/>
+  <g stroke-linecap="round" fill="none">
+    <path d="M-40 120C200 140 400 160 700 180C1000 200 1150 210 1250 215" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <path d="M-40 200C220 210 450 225 720 235C980 245 1120 250 1250 255" stroke="rgba(118,167,75,0.2)" stroke-width="1.5"/>
+    <path d="M-40 280C180 295 380 310 680 320C960 330 1100 335 1250 340" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <path d="M-40 360C240 370 480 380 760 385C1020 390 1140 392 1250 395" stroke="rgba(118,167,75,0.35)" stroke-width="2"/>
+    <path d="M-40 440C200 450 420 460 700 465C980 470 1100 472 1250 475" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <path d="M-40 520C220 530 460 540 740 545C1000 550 1120 552 1250 555" stroke="rgba(118,167,75,0.25)" stroke-width="1.5"/>
+    <path d="M-40 600C180 610 400 620 680 625C960 630 1080 632 1250 635" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <path d="M-40 680C200 690 440 700 720 705C1000 710 1150 712 1250 715" stroke="rgba(118,167,75,0.15)" stroke-width="1"/>
+  </g>
+  <circle cx="180" cy="400" r="6" fill="#76A74B" opacity="0.9"/>
+  <circle cx="180" cy="400" r="40" stroke="rgba(118,167,75,0.3)" stroke-width="1" fill="none"/>
+</svg>

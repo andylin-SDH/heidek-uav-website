@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="t-glow" x1="50%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#76A74B" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#76A74B" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#211D1E"/>
+  <g opacity="0.08" stroke="#fff" stroke-width="1">
+    <path d="M0 400H1200"/><path d="M700 0V800"/>
+  </g>
+  <g transform="translate(780 400)">
+    <circle r="320" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <circle r="260" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <circle r="200" stroke="rgba(118,167,75,0.12)" stroke-width="1.5"/>
+    <circle r="140" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <circle r="80" stroke="rgba(118,167,75,0.35)" stroke-width="2"/>
+    <circle r="36" fill="rgba(118,167,75,0.2)" stroke="#76A74B" stroke-width="1.5"/>
+    <circle r="10" fill="#76A74B"/>
+    <path d="M36 0A80 80 0 0 1 -18 69" stroke="rgba(118,167,75,0.5)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M-18 69A140 140 0 0 1 -128 -41" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M-128 -41A200 200 0 0 1 36 0" stroke="rgba(118,167,75,0.3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M36 0L420 0" stroke="url(#t-glow)" stroke-width="140" stroke-linecap="round" opacity="0.5"/>
+  </g>
+</svg>

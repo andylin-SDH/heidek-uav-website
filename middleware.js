@@ -9,7 +9,11 @@ export default function middleware(request) {
     return;
   }
 
-  if (pathname.startsWith('/assets/') || pathname === '/holding.html') {
+  if (
+    pathname.startsWith('/assets/') ||
+    pathname === '/holding.html' ||
+    pathname === '/hero-kv-preview.html'
+  ) {
     return;
   }
 

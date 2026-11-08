@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hero KV 方案預覽（內部）</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: -apple-system, "Noto Sans TC", sans-serif; background: #0d0c0c; color: #eee; padding: 24px; }
+    h1 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+    p { font-size: 0.85rem; color: #999; margin-bottom: 24px; max-width: 640px; line-height: 1.6; }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+  </style>
+</head>
+<body>
+  <h1>Hero 主視覺方案（內部比稿）</h1>
+  <p>目前上線使用：方案 A。要換版請改 <code>index.html</code> 中 <code>hero-kv.svg</code> 的檔名。</p>
+  <div class="grid" id="grid"></div>
+  <script>
+    const options = [
+      { id: 'A', file: 'hero-kv.svg', title: '方案 A · 噴流尾焰', desc: '噴口光點 + 綠白尾流（目前使用）' },
+      { id: 'B', file: 'hero-kv-turbine.svg', title: '方案 B · 渦輪同心', desc: '轉速／壓縮段同心圓，偏引擎本體意象' },
+      { id: 'C', file: 'hero-kv-streamlines.svg', title: '方案 C · 氣動流線', desc: '風洞式平行曲線，航太感、最低調' },
+      { id: 'D', file: 'hero-kv-thrust.svg', title: '方案 D · 推力矢 chevron', desc: '一段段箭頭漸弱，強調 kgf / 加速' },
+      { id: 'E', file: 'hero-kv-wingmark.svg', title: '方案 E · Logo 雙翼放大', desc: '像火箭公司只留「尾巴」—純符號水印' },
+      { id: 'F', file: 'hero-kv-altitude.svg', title: '方案 F · 升限弧線', desc: '地平線 + 軌道弧，聯想 Ceiling / 飛行包線' },
+    ];
+    const grid = document.getElementById('grid');
+    options.forEach((o) => {
+      const el = document.createElement('article');
+      el.innerHTML = `
+        <div style="border:1px solid #333;border-radius:12px;overflow:hidden;margin-bottom:8px">
+          <img src="assets/images/${o.file}" alt="" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block">
+        </div>
+        <h2 style="font-size:0.95rem;margin-bottom:4px">${o.title}</h2>
+        <p style="font-size:0.8rem;color:#888;margin:0">${o.desc}</p>
+      `;
+      grid.appendChild(el);
+    });
+  </script>
+</body>
+</html>
