@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <rect width="1200" height="800" fill="#211D1E"/>
+  <defs>
+    <radialGradient id="fw-halo" cx="58%" cy="50%" r="30%">
+      <stop offset="0%" stop-color="#76A74B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fw-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#211D1E"/>
+      <stop offset="44%" stop-color="#211D1E" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#fw-halo)"/>
+  <rect width="1200" height="800" fill="url(#fw-fade)"/>
+  <g transform="translate(700 400) scale(5.5)">
+    <path d="M8 26C14 32 24 34 34 28L42 22C32 30 18 30 10 24L8 26Z" fill="rgba(118,167,75,0.5)" stroke="#76A74B" stroke-width="1.8"/>
+    <path d="M10 18C18 10 30 8 40 14L48 8C36 2 20 4 12 12L10 18Z" fill="rgba(255,255,255,0.3)" stroke="#fff" stroke-width="1.5" stroke-opacity="0.55"/>
+    <path d="M18 20C22 22 28 21 32 18L36 15C31 19 23 19 18 16V20Z" fill="#8BB863"/>
+  </g>
+  <circle cx="700" cy="400" r="200" stroke="#76A74B" stroke-width="2" opacity="0.35" fill="none"/>
+  <circle cx="700" cy="400" r="130" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" fill="none"/>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <rect width="1200" height="800" fill="#211D1E"/>
+  <defs>
+    <radialGradient id="fpb-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8BB863" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#76A74B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fpb-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#211D1E"/>
+      <stop offset="40%" stop-color="#211D1E" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#211D1E" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <circle cx="700" cy="400" r="320" fill="url(#fpb-core)"/>
+  <rect width="1200" height="800" fill="url(#fpb-fade)"/>
+  <g transform="translate(700 400)">
+    <circle r="64" stroke="#76A74B" stroke-width="3" fill="rgba(33,29,30,0.5)"/>
+    <circle r="18" fill="#8BB863" stroke="#fff" stroke-width="2"/>
+    <path d="M0 -130C-100 -70 -100 70 0 130C0 70 0 -70 0 -130Z" fill="rgba(118,167,75,0.35)"/>
+    <path d="M0 0 L0 -210" stroke="#8BB863" stroke-width="4"/>
+    <path d="M0 0 L180 -104" stroke="#76A74B" stroke-width="3.5"/>
+    <path d="M0 0 L180 104" stroke="#76A74B" stroke-width="3.5"/>
+    <path d="M0 0 L-180 -104" stroke="#fff" stroke-opacity="0.35" stroke-width="2.5"/>
+    <path d="M0 0 L-180 104" stroke="#fff" stroke-opacity="0.35" stroke-width="2.5"/>
+    <ellipse rx="240" ry="100" stroke="#76A74B" stroke-width="2.5" opacity="0.7" fill="none"/>
+    <ellipse rx="170" ry="68" stroke="#8BB863" stroke-width="4" fill="none" opacity="0.85"/>
+    <ellipse rx="100" ry="40" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
+  </g>
+</svg>

@@ -10,21 +10,31 @@
     body { font-family: -apple-system, "Noto Sans TC", sans-serif; background: #0d0c0c; color: #eee; padding: 24px; }
     h1 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
     p { font-size: 0.85rem; color: #999; margin-bottom: 16px; max-width: 720px; line-height: 1.6; }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-bottom: 32px; }
+    .grid--focus article h3 { color: #b8e08a; }
   </style>
 </head>
 <body>
   <h1>Hero 主視覺方案（內部比稿）</h1>
-  <p>目前上線使用：<strong style="color:#8BB863">方案 A</strong>。要換版請改 <code>index.html</code> 的 <code>hero-kv.svg</code> 檔名。</p>
-  <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#ccc">色線加強系列（新）</h2>
-  <div class="grid" id="grid-bold" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));margin-bottom:32px"></div>
+  <p>目前上線：<strong style="color:#8BB863">方案 A</strong>。換版請改 <code>index.html</code> 的 <code>hero-kv.svg</code>，並建議 <code>object-position: center</code>（集中系列）。</p>
+  <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#8BB863">★ 集中視覺系列（推薦）</h2>
+  <p style="margin-top:-8px;margin-bottom:12px;font-size:0.8rem">單一焦點約在畫面中央偏右，線條收斂、不散落滿版。</p>
+  <div class="grid grid--focus" id="grid-focus"></div>
+  <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#ccc">色線加強系列（橫向發散）</h2>
+  <div class="grid" id="grid-bold"></div>
   <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#ccc">標準系列</h2>
-  <div class="grid" id="grid" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))"></div>
+  <div class="grid" id="grid"></div>
   <script>
-    function renderCard(o, accent) {
-      const border = accent ? '#4a7330' : '#333';
+    function renderCard(o, style) {
+      const styles = {
+        focus: { border: '#76A74B', glow: 'box-shadow:0 0 24px rgba(118,167,75,0.15)' },
+        bold: { border: '#4a7330', glow: 'box-shadow:0 0 0 1px rgba(139,184,99,0.25)' },
+        std: { border: '#333', glow: '' },
+      };
+      const s = styles[style];
       return `
         <article>
-          <div style="border:1px solid ${border};border-radius:12px;overflow:hidden;margin-bottom:8px;${accent ? 'box-shadow:0 0 0 1px rgba(139,184,99,0.25)' : ''}">
+          <div style="border:1px solid ${s.border};border-radius:12px;overflow:hidden;margin-bottom:8px;${s.glow}">
             <img src="assets/images/${o.file}" alt="" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block">
           </div>
           <h3 style="font-size:0.95rem;margin-bottom:4px">${o.title}</h3>
@@ -32,25 +42,36 @@
         </article>
       `;
     }
+    const focus = [
+      { id: 'H1', file: 'hero-kv-focus-plume-bold.svg', title: 'H1 · 中心噴流（加強）', desc: '放射橢圓 + 中心噴口，色線飽和' },
+      { id: 'H2', file: 'hero-kv-focus-plume.svg', title: 'H2 · 中心噴流', desc: '低調版同心尾焰' },
+      { id: 'H3', file: 'hero-kv-focus-rings-bold.svg', title: 'H3 · 中心渦輪環', desc: '三層同心圓集中在焦點' },
+      { id: 'H4', file: 'hero-kv-focus-burst-bold.svg', title: 'H4 · 中心放射', desc: '短射線，不拉滿畫面' },
+      { id: 'H5', file: 'hero-kv-focus-flow-bold.svg', title: 'H5 · 中心層流', desc: '橢圓層流包覆核心' },
+      { id: 'H6', file: 'hero-kv-focus-wing-bold.svg', title: 'H6 · 中心雙翼', desc: 'Logo 置中 + 暈圈' },
+      { id: 'H7', file: 'hero-kv-focus-axis-bold.svg', title: 'H7 · 中心軸線', desc: '十字推力軸，最簡潔' },
+      { id: 'H8', file: 'hero-kv-focus-axis.svg', title: 'H8 · 中心軸線（淡）', desc: '細線版' },
+    ];
     const bold = [
-      { id: 'G1', file: 'hero-kv-plume-bold.svg', title: 'G1 · 噴流尾焰（加強）', desc: '尾流填色更飽和、線條 3–4px' },
-      { id: 'G2', file: 'hero-kv-streamlines-bold.svg', title: 'G2 · 氣動流線（加強）', desc: '主導線 5px 品牌綠，對比最高' },
-      { id: 'G3', file: 'hero-kv-thrust-bold.svg', title: 'G3 · 推力矢（加強）', desc: '箭羽描邊 + 虛線推力軸' },
-      { id: 'G4', file: 'hero-kv-turbine-bold.svg', title: 'G4 · 渦輪同心（加強）', desc: '同心圓與葉片弧加粗' },
-      { id: 'G5', file: 'hero-kv-contrail-bold.svg', title: 'G5 · 飛行尾跡', desc: '粗曲線如航跡，動態感強' },
-      { id: 'G6', file: 'hero-kv-lattice-bold.svg', title: 'G6 · 推力格柵', desc: '三角透視格線，工程味' },
-      { id: 'G7', file: 'hero-kv-wingmark-bold.svg', title: 'G7 · Logo 雙翼（加強）', desc: '符號描邊 + 對角線強化' },
+      { id: 'G1', file: 'hero-kv-plume-bold.svg', title: 'G1 · 噴流尾焰（加強）', desc: '由左向右長尾流' },
+      { id: 'G2', file: 'hero-kv-streamlines-bold.svg', title: 'G2 · 氣動流線（加強）', desc: '橫向滿版曲線' },
+      { id: 'G3', file: 'hero-kv-thrust-bold.svg', title: 'G3 · 推力矢（加強）', desc: '橫向箭羽鏈' },
+      { id: 'G4', file: 'hero-kv-turbine-bold.svg', title: 'G4 · 渦輪（加強）', desc: '偏右同心' },
+      { id: 'G5', file: 'hero-kv-contrail-bold.svg', title: 'G5 · 航跡', desc: '橫跨畫面曲線' },
+      { id: 'G6', file: 'hero-kv-lattice-bold.svg', title: 'G6 · 格柵', desc: '透視三角網' },
+      { id: 'G7', file: 'hero-kv-wingmark-bold.svg', title: 'G7 · 雙翼', desc: '偏側符號' },
     ];
     const standard = [
-      { id: 'A', file: 'hero-kv.svg', title: 'A · 噴流尾焰', desc: '目前官網使用' },
-      { id: 'B', file: 'hero-kv-turbine.svg', title: 'B · 渦輪同心', desc: '淡色同心圓' },
-      { id: 'C', file: 'hero-kv-streamlines.svg', title: 'C · 氣動流線', desc: '低調平行曲線' },
-      { id: 'D', file: 'hero-kv-thrust.svg', title: 'D · 推力矢', desc: '淡 chevron' },
-      { id: 'E', file: 'hero-kv-wingmark.svg', title: 'E · Logo 雙翼', desc: '浮水印雙翼' },
-      { id: 'F', file: 'hero-kv-altitude.svg', title: 'F · 升限弧線', desc: '地平與軌道弧' },
+      { id: 'A', file: 'hero-kv.svg', title: 'A · 噴流尾焰', desc: '目前官網' },
+      { id: 'B', file: 'hero-kv-turbine.svg', title: 'B · 渦輪同心', desc: '淡色' },
+      { id: 'C', file: 'hero-kv-streamlines.svg', title: 'C · 氣動流線', desc: '淡色' },
+      { id: 'D', file: 'hero-kv-thrust.svg', title: 'D · 推力矢', desc: '淡色' },
+      { id: 'E', file: 'hero-kv-wingmark.svg', title: 'E · Logo 雙翼', desc: '淡色' },
+      { id: 'F', file: 'hero-kv-altitude.svg', title: 'F · 升限弧線', desc: '淡色' },
     ];
-    document.getElementById('grid-bold').innerHTML = bold.map((o) => renderCard(o, true)).join('');
-    document.getElementById('grid').innerHTML = standard.map((o) => renderCard(o, false)).join('');
+    document.getElementById('grid-focus').innerHTML = focus.map((o) => renderCard(o, 'focus')).join('');
+    document.getElementById('grid-bold').innerHTML = bold.map((o) => renderCard(o, 'bold')).join('');
+    document.getElementById('grid').innerHTML = standard.map((o) => renderCard(o, 'std')).join('');
   </script>
 </body>
 </html>

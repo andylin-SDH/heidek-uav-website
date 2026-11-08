@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <rect width="1200" height="800" fill="#211D1E"/>
+  <defs>
+    <radialGradient id="fb-light" cx="58%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#8BB863" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#fb-light)"/>
+  <linearGradient id="fb-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#211D1E"/>
+    <stop offset="42%" stop-color="#211D1E" stop-opacity="0.88"/>
+    <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+  </linearGradient>
+  <rect width="1200" height="800" fill="url(#fb-fade)"/>
+  <g transform="translate(700 400)" stroke-linecap="round">
+    <line x1="0" y1="0" x2="0" y2="-200" stroke="#8BB863" stroke-width="4"/>
+    <line x1="0" y1="0" x2="0" y2="200" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+    <line x1="0" y1="0" x2="173" y2="-100" stroke="#76A74B" stroke-width="3.5"/>
+    <line x1="0" y1="0" x2="173" y2="100" stroke="#76A74B" stroke-width="3.5"/>
+    <line x1="0" y1="0" x2="-173" y2="-100" stroke="rgba(255,255,255,0.35)" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="-173" y2="100" stroke="rgba(255,255,255,0.35)" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="200" y2="0" stroke="#8BB863" stroke-width="3" opacity="0.6"/>
+    <line x1="0" y1="0" x2="-150" y2="0" stroke="#76A74B" stroke-width="2.5" opacity="0.5"/>
+    <line x1="0" y1="0" x2="141" y2="-141" stroke="#76A74B" stroke-width="2" opacity="0.45"/>
+    <line x1="0" y1="0" x2="141" y2="141" stroke="#76A74B" stroke-width="2" opacity="0.45"/>
+    <circle r="56" stroke="#76A74B" stroke-width="3" fill="rgba(118,167,75,0.12)"/>
+    <circle r="16" fill="#8BB863"/>
+  </g>
+</svg>

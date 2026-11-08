@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <rect width="1200" height="800" fill="#211D1E"/>
+  <defs>
+    <radialGradient id="fp-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#76A74B" stop-opacity="0.35"/>
+      <stop offset="55%" stop-color="#76A74B" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#76A74B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fp-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#211D1E"/>
+      <stop offset="42%" stop-color="#211D1E" stop-opacity="0.92"/>
+      <stop offset="58%" stop-color="#211D1E" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="720" cy="400" rx="280" ry="220" fill="url(#fp-glow)"/>
+  <rect width="1200" height="800" fill="url(#fp-fade)"/>
+  <g transform="translate(720 400)">
+    <circle r="52" stroke="rgba(118,167,75,0.35)" stroke-width="1.5" fill="rgba(118,167,75,0.08)"/>
+    <circle r="12" fill="#76A74B"/>
+    <path d="M0 -120C-80 -60 -80 60 0 120C0 60 0 -60 0 -120Z" fill="rgba(255,255,255,0.06)" transform="rotate(-90)"/>
+    <path d="M0 -100C-90 0 90 0 0 100Z" fill="rgba(118,167,75,0.2)"/>
+    <path d="M0 0 L0 -200" stroke="#8BB863" stroke-width="2" opacity="0.5"/>
+    <path d="M0 0 L173 -100" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+    <path d="M0 0 L173 100" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+    <path d="M0 0 L-173 -100" stroke="rgba(118,167,75,0.35)" stroke-width="2"/>
+    <path d="M0 0 L-173 100" stroke="rgba(118,167,75,0.35)" stroke-width="2"/>
+    <path d="M0 0 L200 0" stroke="rgba(118,167,75,0.25)" stroke-width="1.5"/>
+    <ellipse rx="220" ry="90" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+    <ellipse rx="160" ry="60" stroke="rgba(118,167,75,0.2)" stroke-width="1.5" fill="none"/>
+  </g>
+</svg>
