@@ -1,3 +1,4 @@
 .DS_Store
 *.log
 .pip_packages/
+assets/images/product-refs/

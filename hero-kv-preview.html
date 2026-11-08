@@ -16,8 +16,11 @@
 </head>
 <body>
   <h1>Hero 主視覺方案（內部比稿）</h1>
-  <p>目前上線：<strong style="color:#8BB863">方案 A</strong>。換版請改 <code>index.html</code> 的 <code>hero-kv.svg</code>，並建議 <code>object-position: center</code>（集中系列）。</p>
-  <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#8BB863">★ 集中視覺系列（推薦）</h2>
+  <p>目前上線：<strong style="color:#8BB863">方案 A</strong>。換版請改 <code>index.html</code> 的 <code>hero-kv.svg</code> 檔名。</p>
+  <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#c9a66a">★ 產品意象系列（依客戶實機發想）</h2>
+  <p style="margin-top:-8px;margin-bottom:12px;font-size:0.8rem">側視圓柱段、進氣盆＋鼻錐三臂、尾噴口與金屬環—避免雷達式 360° 放射。</p>
+  <div class="grid" id="grid-product" style="margin-bottom:32px"></div>
+  <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#8BB863">集中視覺系列</h2>
   <p style="margin-top:-8px;margin-bottom:12px;font-size:0.8rem">單一焦點約在畫面中央偏右，線條收斂、不散落滿版。</p>
   <div class="grid grid--focus" id="grid-focus"></div>
   <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#ccc">色線加強系列（橫向發散）</h2>
@@ -27,6 +30,7 @@
   <script>
     function renderCard(o, style) {
       const styles = {
+        product: { border: '#c9a66a', glow: 'box-shadow:0 0 28px rgba(201,166,106,0.2)' },
         focus: { border: '#76A74B', glow: 'box-shadow:0 0 24px rgba(118,167,75,0.15)' },
         bold: { border: '#4a7330', glow: 'box-shadow:0 0 0 1px rgba(139,184,99,0.25)' },
         std: { border: '#333', glow: '' },
@@ -42,6 +46,13 @@
         </article>
       `;
     }
+    const product = [
+      { id: 'P1', file: 'hero-kv-engine-profile-bold.svg', title: 'P1 · 側視剖面', desc: '圓柱環帶 + 安裝耳 + 尾錐噴流（單軸推力）' },
+      { id: 'P2', file: 'hero-kv-engine-intake-bold.svg', title: 'P2 · 進氣正面', desc: '雙環 + 三臂鼻錐（對應實機進氣）' },
+      { id: 'P3', file: 'hero-kv-engine-stack-bold.svg', title: 'P3 · 本體環段', desc: '側向角度金屬環，非平面雷達' },
+      { id: 'P4', file: 'hero-kv-engine-exhaust-bold.svg', title: 'P4 · 尾噴口', desc: '耐熱鼻錐色 + 單向噴流' },
+      { id: 'P5', file: 'hero-kv-engine-duotone.svg', title: 'P5 · 實機剪影', desc: '產品照低透明度＋暗角（不搶文案）' },
+    ];
     const focus = [
       { id: 'H1', file: 'hero-kv-focus-plume-bold.svg', title: 'H1 · 中心噴流（加強）', desc: '放射橢圓 + 中心噴口，色線飽和' },
       { id: 'H2', file: 'hero-kv-focus-plume.svg', title: 'H2 · 中心噴流', desc: '低調版同心尾焰' },
@@ -69,6 +80,7 @@
       { id: 'E', file: 'hero-kv-wingmark.svg', title: 'E · Logo 雙翼', desc: '淡色' },
       { id: 'F', file: 'hero-kv-altitude.svg', title: 'F · 升限弧線', desc: '淡色' },
     ];
+    document.getElementById('grid-product').innerHTML = product.map((o) => renderCard(o, 'product')).join('');
     document.getElementById('grid-focus').innerHTML = focus.map((o) => renderCard(o, 'focus')).join('');
     document.getElementById('grid-bold').innerHTML = bold.map((o) => renderCard(o, 'bold')).join('');
     document.getElementById('grid').innerHTML = standard.map((o) => renderCard(o, 'std')).join('');
