@@ -9,35 +9,48 @@
     * { box-sizing: border-box; margin: 0; }
     body { font-family: -apple-system, "Noto Sans TC", sans-serif; background: #0d0c0c; color: #eee; padding: 24px; }
     h1 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
-    p { font-size: 0.85rem; color: #999; margin-bottom: 24px; max-width: 640px; line-height: 1.6; }
-    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+    p { font-size: 0.85rem; color: #999; margin-bottom: 16px; max-width: 720px; line-height: 1.6; }
   </style>
 </head>
 <body>
   <h1>Hero 主視覺方案（內部比稿）</h1>
-  <p>目前上線使用：方案 A。要換版請改 <code>index.html</code> 中 <code>hero-kv.svg</code> 的檔名。</p>
-  <div class="grid" id="grid"></div>
+  <p>目前上線使用：<strong style="color:#8BB863">方案 A</strong>。要換版請改 <code>index.html</code> 的 <code>hero-kv.svg</code> 檔名。</p>
+  <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#ccc">色線加強系列（新）</h2>
+  <div class="grid" id="grid-bold" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));margin-bottom:32px"></div>
+  <h2 style="font-size:0.95rem;margin:28px 0 12px;color:#ccc">標準系列</h2>
+  <div class="grid" id="grid" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))"></div>
   <script>
-    const options = [
-      { id: 'A', file: 'hero-kv.svg', title: '方案 A · 噴流尾焰', desc: '噴口光點 + 綠白尾流（目前使用）' },
-      { id: 'B', file: 'hero-kv-turbine.svg', title: '方案 B · 渦輪同心', desc: '轉速／壓縮段同心圓，偏引擎本體意象' },
-      { id: 'C', file: 'hero-kv-streamlines.svg', title: '方案 C · 氣動流線', desc: '風洞式平行曲線，航太感、最低調' },
-      { id: 'D', file: 'hero-kv-thrust.svg', title: '方案 D · 推力矢 chevron', desc: '一段段箭頭漸弱，強調 kgf / 加速' },
-      { id: 'E', file: 'hero-kv-wingmark.svg', title: '方案 E · Logo 雙翼放大', desc: '像火箭公司只留「尾巴」—純符號水印' },
-      { id: 'F', file: 'hero-kv-altitude.svg', title: '方案 F · 升限弧線', desc: '地平線 + 軌道弧，聯想 Ceiling / 飛行包線' },
-    ];
-    const grid = document.getElementById('grid');
-    options.forEach((o) => {
-      const el = document.createElement('article');
-      el.innerHTML = `
-        <div style="border:1px solid #333;border-radius:12px;overflow:hidden;margin-bottom:8px">
-          <img src="assets/images/${o.file}" alt="" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block">
-        </div>
-        <h2 style="font-size:0.95rem;margin-bottom:4px">${o.title}</h2>
-        <p style="font-size:0.8rem;color:#888;margin:0">${o.desc}</p>
+    function renderCard(o, accent) {
+      const border = accent ? '#4a7330' : '#333';
+      return `
+        <article>
+          <div style="border:1px solid ${border};border-radius:12px;overflow:hidden;margin-bottom:8px;${accent ? 'box-shadow:0 0 0 1px rgba(139,184,99,0.25)' : ''}">
+            <img src="assets/images/${o.file}" alt="" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block">
+          </div>
+          <h3 style="font-size:0.95rem;margin-bottom:4px">${o.title}</h3>
+          <p style="font-size:0.8rem;color:#888;margin:0">${o.desc}</p>
+        </article>
       `;
-      grid.appendChild(el);
-    });
+    }
+    const bold = [
+      { id: 'G1', file: 'hero-kv-plume-bold.svg', title: 'G1 · 噴流尾焰（加強）', desc: '尾流填色更飽和、線條 3–4px' },
+      { id: 'G2', file: 'hero-kv-streamlines-bold.svg', title: 'G2 · 氣動流線（加強）', desc: '主導線 5px 品牌綠，對比最高' },
+      { id: 'G3', file: 'hero-kv-thrust-bold.svg', title: 'G3 · 推力矢（加強）', desc: '箭羽描邊 + 虛線推力軸' },
+      { id: 'G4', file: 'hero-kv-turbine-bold.svg', title: 'G4 · 渦輪同心（加強）', desc: '同心圓與葉片弧加粗' },
+      { id: 'G5', file: 'hero-kv-contrail-bold.svg', title: 'G5 · 飛行尾跡', desc: '粗曲線如航跡，動態感強' },
+      { id: 'G6', file: 'hero-kv-lattice-bold.svg', title: 'G6 · 推力格柵', desc: '三角透視格線，工程味' },
+      { id: 'G7', file: 'hero-kv-wingmark-bold.svg', title: 'G7 · Logo 雙翼（加強）', desc: '符號描邊 + 對角線強化' },
+    ];
+    const standard = [
+      { id: 'A', file: 'hero-kv.svg', title: 'A · 噴流尾焰', desc: '目前官網使用' },
+      { id: 'B', file: 'hero-kv-turbine.svg', title: 'B · 渦輪同心', desc: '淡色同心圓' },
+      { id: 'C', file: 'hero-kv-streamlines.svg', title: 'C · 氣動流線', desc: '低調平行曲線' },
+      { id: 'D', file: 'hero-kv-thrust.svg', title: 'D · 推力矢', desc: '淡 chevron' },
+      { id: 'E', file: 'hero-kv-wingmark.svg', title: 'E · Logo 雙翼', desc: '浮水印雙翼' },
+      { id: 'F', file: 'hero-kv-altitude.svg', title: 'F · 升限弧線', desc: '地平與軌道弧' },
+    ];
+    document.getElementById('grid-bold').innerHTML = bold.map((o) => renderCard(o, true)).join('');
+    document.getElementById('grid').innerHTML = standard.map((o) => renderCard(o, false)).join('');
   </script>
 </body>
 </html>
