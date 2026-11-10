@@ -345,10 +345,18 @@ img {
 .hero__title {
   font-size: clamp(2.2rem, 5.5vw, 3.75rem);
   font-weight: 900;
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: 0.02em;
   margin-bottom: 0;
   color: #fff;
+}
+
+.hero__title-line {
+  display: block;
+}
+
+.hero__title-line + .hero__title-line {
+  margin-top: 0.08em;
 }
 
 .hero__title-accent {
