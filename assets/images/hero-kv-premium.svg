@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="hp-ambient" cx="58%" cy="48%" r="48%">
+      <stop offset="0%" stop-color="#3d4a36" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#211D1E" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hp-read" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#211D1E"/>
+      <stop offset="38%" stop-color="#211D1E" stop-opacity="0.97"/>
+      <stop offset="52%" stop-color="#211D1E" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="hp-metal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eef1f3"/>
+      <stop offset="38%" stop-color="#9ca3a8"/>
+      <stop offset="62%" stop-color="#d4d8db"/>
+      <stop offset="100%" stop-color="#5c6064"/>
+    </linearGradient>
+    <linearGradient id="hp-rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#76A74B" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#76A74B" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="hp-exhaust" x1="100%" y1="50%" x2="0%" y2="50%">
+      <stop offset="0%" stop-color="#c4a06a" stop-opacity="0.7"/>
+      <stop offset="35%" stop-color="#8BB863" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#211D1E" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="hp-glow" cx="0%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#76A74B" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#76A74B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hp-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="hp-photo">
+      <feColorMatrix type="matrix" values="0.25 0.25 0.25 0 0.05
+        0.25 0.25 0.25 0 0.05
+        0.25 0.25 0.25 0 0.05
+        0 0 0 0.9 0"/>
+    </filter>
+    <mask id="hp-photo-mask">
+      <rect width="1200" height="800" fill="url(#hp-read)"/>
+    </mask>
+    <clipPath id="hp-clip">
+      <rect x="340" y="40" width="560" height="720" rx="24"/>
+    </clipPath>
+  </defs>
+  <rect width="1200" height="800" fill="#1c1a1b"/>
+  <rect width="1200" height="800" fill="url(#hp-ambient)"/>
+  <ellipse cx="420" cy="410" rx="220" ry="120" fill="url(#hp-glow)" filter="url(#hp-soft)" opacity="0.6"/>
+  <g mask="url(#hp-photo-mask)">
+    <image href="hero-engine-ref.jpg" x="300" y="20" width="620" height="760" preserveAspectRatio="xMidYMid slice" opacity="0.42" filter="url(#hp-photo)" clip-path="url(#hp-clip)"/>
+  </g>
+  <rect width="1200" height="800" fill="url(#hp-read)"/>
+  <g transform="translate(700 400)" opacity="0.92">
+    <ellipse cx="-90" cy="0" rx="200" ry="70" fill="url(#hp-exhaust)" filter="url(#hp-soft)" opacity="0.85"/>
+    <path d="M200 -58 L200 58 L-30 44 L-105 0 L-30 -44 Z" fill="url(#hp-metal)" opacity="0.55" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <path d="M-105 0 L-215 -34 L-268 -14 L-268 14 L-215 34 Z" fill="#6a5e4f" opacity="0.75" stroke="url(#hp-rim)" stroke-width="1.5"/>
+    <circle cx="205" cy="0" r="128" fill="none" stroke="url(#hp-rim)" stroke-width="2" opacity="0.85"/>
+    <circle cx="205" cy="0" r="102" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <circle cx="205" cy="0" r="72" fill="#252223" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <line x1="205" y1="-72" x2="205" y2="72" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <line x1="143" y1="36" x2="267" y2="-36" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <line x1="143" y1="-36" x2="267" y2="36" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <ellipse cx="205" cy="0" rx="22" ry="38" fill="url(#hp-metal)" stroke="rgba(255,255,255,0.45)" stroke-width="1.25"/>
+    <circle cx="205" cy="0" r="5" fill="#8BB863"/>
+  </g>
+  <line x1="0" y1="680" x2="1200" y2="680" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="520" y1="0" x2="520" y2="800" stroke="rgba(118,167,75,0.08)" stroke-width="1"/>
+</svg>
