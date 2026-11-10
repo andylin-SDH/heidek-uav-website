@@ -64,4 +64,21 @@
   }
 
   window.addEventListener('scroll', highlightNav, { passive: true });
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = contactForm.querySelector('button[type="submit"]');
+      if (!btn) return;
+      const originalText = btn.textContent;
+      btn.textContent = '已送出，感謝詢價！';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        contactForm.reset();
+      }, 2800);
+    });
+  }
 })();
