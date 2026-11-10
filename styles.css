@@ -1828,6 +1828,13 @@ img {
   background: var(--color-bg-elevated);
 }
 
+.contact__grid--single {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin: 0 auto;
+  gap: 0;
+}
+
 .form-required {
   color: var(--color-accent-dark);
 }
