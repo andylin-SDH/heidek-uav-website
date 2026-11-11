@@ -2,4 +2,5 @@
 *.log
 .pip_packages/
 assets/images/product-refs/
+assets/images/products/
 assets/images/*-with-text.jpg

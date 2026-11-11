@@ -1751,18 +1751,110 @@ img {
 /* ===== Product lineup (simplified) ===== */
 .lineup-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
   margin-bottom: 28px;
 }
 
 .lineup-card {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 28px 24px;
+  padding: 0 0 24px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+}
+
+.lineup-card__media {
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.lineup-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lineup-card__media--empty {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-bg-elevated),
+    var(--color-bg-elevated) 8px,
+    #eceef1 8px,
+    #eceef1 16px
+  );
+}
+
+.lineup-card__name,
+.lineup-card__tier,
+.lineup-card__text,
+.lineup-card__angles,
+.lineup-card__cta {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.lineup-card__name {
+  margin-top: 20px;
+}
+
+.lineup-card__angles {
+  margin-top: 12px;
+  font-size: 0.85rem;
+}
+
+.lineup-card__angles summary {
+  cursor: pointer;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  list-style: none;
+}
+
+.lineup-card__angles summary::-webkit-details-marker {
+  display: none;
+}
+
+.lineup-card__thumbs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.lineup-card__thumbs img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-elevated);
+}
+
+.lineup-card__cta {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+  transition: color var(--transition);
+}
+
+.lineup-card__cta:hover {
+  color: var(--color-accent);
 }
 
 .lineup-card:hover {
@@ -1886,16 +1978,19 @@ img {
   color: var(--color-accent);
 }
 
-@media (max-width: 1024px) {
-  .lineup-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.lineup-card {
+  position: relative;
 }
 
-@media (max-width: 560px) {
-  .lineup-grid {
-    grid-template-columns: 1fr;
-  }
+.lineup-card:not(.lineup-card--no-media)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-gradient);
+  z-index: 1;
 }
 
 /* ===== Spec Table ===== */

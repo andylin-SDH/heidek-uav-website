@@ -65,6 +65,14 @@
 
   window.addEventListener('scroll', highlightNav, { passive: true });
 
+  document.querySelectorAll('[data-prefill-model]').forEach(link => {
+    link.addEventListener('click', () => {
+      const select = document.getElementById('model');
+      const value = link.getAttribute('data-prefill-model');
+      if (select && value) select.value = value;
+    });
+  });
+
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', e => {
