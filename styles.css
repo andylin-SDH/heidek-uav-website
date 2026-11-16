@@ -1749,6 +1749,59 @@ img {
 }
 
 /* ===== Product lineup (simplified) ===== */
+.lineup-grid__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 40px 0 20px;
+  color: var(--color-text);
+}
+
+.spec-table--compact {
+  font-size: 0.88rem;
+}
+
+.spec-table--compact .spec-th,
+.spec-table--compact .spec-td {
+  padding: 14px 16px;
+}
+
+.contact-channels {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
+  margin-bottom: 32px;
+  padding: 20px 24px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-channels strong {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.contact-channels a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+}
+
+.contact-channels a:hover {
+  color: var(--color-accent);
+}
+
+.contact__form-lead {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: -8px 0 20px;
+}
+
 .lineup-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

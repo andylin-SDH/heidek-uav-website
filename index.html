@@ -21,9 +21,6 @@
       </button>
       <ul class="nav__menu" id="navMenu">
         <li><a href="#specs" class="nav__link">產品系列</a></li>
-        <li><a href="#profiles" class="nav__link">工況特性</a></li>
-        <li><a href="#sop" class="nav__link">試飛程序</a></li>
-        <li><a href="#safety" class="nav__link">安全準則</a></li>
         <li><a href="#contact" class="nav__link nav__link--cta">聯繫詢價</a></li>
       </ul>
     </nav>
@@ -64,34 +61,81 @@
           <div class="section__header-body">
             <h2 class="section__title">產品系列</h2>
             <p class="section__subtitle">Product Portfolio</p>
-            <p class="section__desc">涵蓋多段推力等級，可依載台任務需求選配；完整規格書與報價請透過下方表單洽詢。</p>
+            <p class="section__desc">型號規格與產品示意圖如下；詳細規格書與報價請透過下方聯繫方式洽詢。</p>
           </div>
         </div>
+        <div class="spec-table-scroll reveal">
+          <div class="spec-table-wrap">
+            <table class="spec-table spec-table--compact">
+              <thead>
+                <tr>
+                  <th class="spec-th spec-th--model"><span class="spec-th__zh">型號</span></th>
+                  <th class="spec-th"><span class="spec-th__zh">推力</span></th>
+                  <th class="spec-th"><span class="spec-th__zh">重量</span></th>
+                  <th class="spec-th"><span class="spec-th__zh">尺寸（直徑 × 長度）</span></th>
+                  <th class="spec-th"><span class="spec-th__zh">轉速範圍</span></th>
+                  <th class="spec-th"><span class="spec-th__zh">排氣溫度 (EGT)</span></th>
+                  <th class="spec-th"><span class="spec-th__zh">電壓</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="spec-td spec-td--model"><span class="spec-model__name">FQ230</span></td>
+                  <td class="spec-td"><span class="spec-val">23 kgf</span></td>
+                  <td class="spec-td"><span class="spec-val">3.1 kg</span></td>
+                  <td class="spec-td"><span class="spec-val">Ø147 × 334 mm</span></td>
+                  <td class="spec-td"><span class="spec-val">46,000 ~ 108,000 rpm</span></td>
+                  <td class="spec-td"><span class="spec-val">850℃</span></td>
+                  <td class="spec-td"><span class="spec-val">24V</span></td>
+                </tr>
+                <tr>
+                  <td class="spec-td spec-td--model"><span class="spec-model__name">SS400 / FQ400</span></td>
+                  <td class="spec-td"><span class="spec-val">40 kgf</span></td>
+                  <td class="spec-td"><span class="spec-val">4.0 kg</span></td>
+                  <td class="spec-td"><span class="spec-val">Ø147 × 353 mm</span></td>
+                  <td class="spec-td"><span class="spec-val">46,000 ~ 108,000 rpm</span></td>
+                  <td class="spec-td"><span class="spec-val">850℃</span></td>
+                  <td class="spec-td"><span class="spec-val">12 ~ 24V</span></td>
+                </tr>
+                <tr>
+                  <td class="spec-td spec-td--model"><span class="spec-model__name">SS800</span></td>
+                  <td class="spec-td"><span class="spec-val">80 kgf</span></td>
+                  <td class="spec-td"><span class="spec-val">9.5 kg</span></td>
+                  <td class="spec-td"><span class="spec-val">Ø205 × 499 mm</span></td>
+                  <td class="spec-td"><span class="spec-val">30,000 ~ 62,000 rpm</span></td>
+                  <td class="spec-td"><span class="spec-val">750℃</span></td>
+                  <td class="spec-td"><span class="spec-val">32V</span></td>
+                </tr>
+                <tr>
+                  <td class="spec-td spec-td--model"><span class="spec-model__name">SS1000 / FQ1000</span></td>
+                  <td class="spec-td"><span class="spec-val">100 kgf</span></td>
+                  <td class="spec-td"><span class="spec-val">12.0 kg</span></td>
+                  <td class="spec-td"><span class="spec-val">Ø233 × 499 mm</span></td>
+                  <td class="spec-td"><span class="spec-val">30,000 ~ 65,000 rpm</span></td>
+                  <td class="spec-td"><span class="spec-val">750℃</span></td>
+                  <td class="spec-td"><span class="spec-val">32V</span></td>
+                </tr>
+                <tr>
+                  <td class="spec-td spec-td--model"><span class="spec-model__name">SS160 / FQ1000</span></td>
+                  <td class="spec-td"><span class="spec-val">160 kgf</span></td>
+                  <td class="spec-td"><span class="spec-val">19.0 kg</span></td>
+                  <td class="spec-td"><span class="spec-val">Ø263 × 626 mm</span></td>
+                  <td class="spec-td"><span class="spec-val">25,000 ~ 48,000 rpm</span></td>
+                  <td class="spec-td"><span class="spec-val">850℃</span></td>
+                  <td class="spec-td"><span class="spec-val">32V</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h3 class="lineup-grid__title reveal">產品照示意圖</h3>
         <div class="lineup-grid reveal">
-          <article class="lineup-card lineup-card--400">
-            <div class="lineup-card__media">
-              <img src="assets/images/products-display/ss400-fq400/cover.webp" alt="SS400 / FQ400 產品示意" width="1400" height="1050" loading="lazy" decoding="async">
-            </div>
-            <h3 class="lineup-card__name">SS400 / FQ400</h3>
-            <p class="lineup-card__tier">40 kgf 級</p>
-            <p class="lineup-card__text">輕量化、高推重比，適合高速戰術靶機與中型 UAV 動力驗證。</p>
-            <details class="lineup-card__angles">
-              <summary>更多角度</summary>
-              <div class="lineup-card__thumbs">
-                <img src="assets/images/products-display/ss400-fq400/angle-1-thumb.webp" alt="" loading="lazy" width="480" height="360">
-                <img src="assets/images/products-display/ss400-fq400/angle-2-thumb.webp" alt="" loading="lazy" width="480" height="360">
-                <img src="assets/images/products-display/ss400-fq400/angle-3-thumb.webp" alt="" loading="lazy" width="480" height="360">
-              </div>
-            </details>
-            <a href="#contact" class="lineup-card__cta" data-prefill-model="ss400">索取報價</a>
-          </article>
           <article class="lineup-card lineup-card--230">
             <div class="lineup-card__media">
               <img src="assets/images/products-display/fq230/cover.webp" alt="FQ230 產品示意" width="1400" height="1050" loading="lazy" decoding="async">
             </div>
             <h3 class="lineup-card__name">FQ230</h3>
             <p class="lineup-card__tier">23 kgf 級</p>
-            <p class="lineup-card__text">緊湊型推力等級，適合小型高速靶機與動力驗證平台。</p>
             <details class="lineup-card__angles">
               <summary>更多角度</summary>
               <div class="lineup-card__thumbs">
@@ -103,13 +147,28 @@
             </details>
             <a href="#contact" class="lineup-card__cta" data-prefill-model="fq230">索取報價</a>
           </article>
+          <article class="lineup-card lineup-card--400">
+            <div class="lineup-card__media">
+              <img src="assets/images/products-display/ss400-fq400/cover.webp" alt="SS400 / FQ400 產品示意" width="1400" height="1050" loading="lazy" decoding="async">
+            </div>
+            <h3 class="lineup-card__name">SS400 / FQ400</h3>
+            <p class="lineup-card__tier">40 kgf 級</p>
+            <details class="lineup-card__angles">
+              <summary>更多角度</summary>
+              <div class="lineup-card__thumbs">
+                <img src="assets/images/products-display/ss400-fq400/angle-1-thumb.webp" alt="" loading="lazy" width="480" height="360">
+                <img src="assets/images/products-display/ss400-fq400/angle-2-thumb.webp" alt="" loading="lazy" width="480" height="360">
+                <img src="assets/images/products-display/ss400-fq400/angle-3-thumb.webp" alt="" loading="lazy" width="480" height="360">
+              </div>
+            </details>
+            <a href="#contact" class="lineup-card__cta" data-prefill-model="ss400">索取報價</a>
+          </article>
           <article class="lineup-card lineup-card--800 lineup-card--no-media">
             <div class="lineup-card__media lineup-card__media--empty">
               <span>圖片準備中</span>
             </div>
             <h3 class="lineup-card__name">SS800</h3>
             <p class="lineup-card__tier">80 kgf 級</p>
-            <p class="lineup-card__text">兼顧巡航經濟性與滿推機動性，適合中大型無人載具。</p>
             <a href="#contact" class="lineup-card__cta" data-prefill-model="ss800">索取報價</a>
           </article>
           <article class="lineup-card lineup-card--1000">
@@ -118,7 +177,6 @@
             </div>
             <h3 class="lineup-card__name">SS1000 / FQ1000</h3>
             <p class="lineup-card__tier">100 kgf 級</p>
-            <p class="lineup-card__text">高持續推力與寬轉速帶，支援偵察／攻擊與高速飛行任務。</p>
             <details class="lineup-card__angles">
               <summary>更多角度</summary>
               <div class="lineup-card__thumbs">
@@ -132,11 +190,10 @@
           </article>
           <article class="lineup-card lineup-card--1600">
             <div class="lineup-card__media">
-              <img src="assets/images/products-display/ss1600-fq1600/cover.webp" alt="SS1600 / FQ1600 產品示意" width="1400" height="1050" loading="lazy" decoding="async">
+              <img src="assets/images/products-display/ss1600-fq1600/cover.webp" alt="SS160 / FQ1000 產品示意" width="1400" height="1050" loading="lazy" decoding="async">
             </div>
-            <h3 class="lineup-card__name">SS1600 / FQ1600</h3>
+            <h3 class="lineup-card__name">SS160 / FQ1000</h3>
             <p class="lineup-card__tier">160 kgf 級</p>
-            <p class="lineup-card__text">重型旗艦推力等級，適用大型靶機與高載荷飛行平台。</p>
             <details class="lineup-card__angles">
               <summary>更多角度</summary>
               <div class="lineup-card__thumbs">
@@ -146,96 +203,7 @@
                 <img src="assets/images/products-display/ss1600-fq1600/angle-4-thumb.webp" alt="" loading="lazy" width="480" height="360">
               </div>
             </details>
-            <a href="#contact" class="lineup-card__cta" data-prefill-model="ss1600">索取報價</a>
-          </article>
-        </div>
-        <p class="lineup-note reveal">全系列採航空煤油預混潤滑機制，具數位 ECU 監控與標準化試飛流程；詳細技術參數另提供。</p>
-      </div>
-    </section>
-
-    <section class="section profiles" id="profiles">
-      <div class="container">
-        <div class="section__header section__header--doc">
-          <div class="section__header-body">
-            <h2 class="section__title">各機型動態工況特性</h2>
-            <p class="section__subtitle">Operating States &amp; Thrust Profiles</p>
-          </div>
-        </div>
-        <div class="profiles__grid">
-          <article class="profile-card profile-card--ss400 reveal">
-            <h3 class="profile-card__title">SS400（40 kgf 級）</h3>
-            <ul class="profile-card__list profile-card__list--brief">
-              <li>怠速自持循環穩定，適合地面試飛與待機。</li>
-              <li>巡航工況維持良好油耗與續航平衡。</li>
-              <li>滿推工況可提供高速爬升與攔截機動餘裕。</li>
-            </ul>
-          </article>
-          <article class="profile-card profile-card--ss800 reveal reveal--delay">
-            <h3 class="profile-card__title">SS800（80 kgf 級）</h3>
-            <ul class="profile-card__list profile-card__list--brief">
-              <li>低轉速怠速推力充足，起動與暖機平順。</li>
-              <li>巡航點落在最佳航程與油耗區間。</li>
-              <li>起飛／超推工況可短時突破額定推力需求。</li>
-            </ul>
-          </article>
-          <article class="profile-card profile-card--ss1000 reveal reveal--delay-2">
-            <h3 class="profile-card__title">SS1000（100 kgf 級）</h3>
-            <ul class="profile-card__list profile-card__list--brief">
-              <li>怠速至巡航轉換迅速，任務剖面彈性高。</li>
-              <li>爬升與機動工況推力儲備充足。</li>
-              <li>滿推工況符合高亞音速飛行包線需求。</li>
-            </ul>
-          </article>
-          <article class="profile-card profile-card--ss1600 reveal reveal--delay-3">
-            <h3 class="profile-card__title">SS1600（160 kgf 級）</h3>
-            <ul class="profile-card__list profile-card__list--brief">
-              <li>重型推力等級，支援大質量載台。</li>
-              <li>高速巡航仍具推力餘裕。</li>
-              <li>滿推工況適合攔截與高速機動任務。</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section sop" id="sop">
-      <div class="container">
-        <div class="section__header section__header--doc">
-          <div class="section__header-body">
-            <h2 class="section__title">試飛自檢標準作業程序</h2>
-            <p class="section__subtitle">Commissioning Overview</p>
-            <p class="section__desc">點火運轉前，現場人員應於地面測控介面完成下列檢驗項目（細部步驟依出廠手冊執行）：</p>
-          </div>
-        </div>
-        <ul class="sop-overview reveal">
-          <li>共面安裝與燃油／潤滑油品確認</li>
-          <li>熱火頭、啟動馬達、油泵之電氣與機械自檢</li>
-          <li>主油路與點火油路電磁閥作動確認</li>
-          <li>雙迴路注油排氣，確保燃油充盈、管路無氣泡</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section safety" id="safety">
-      <div class="container">
-        <div class="section__header section__header--doc">
-          <div class="section__header-body">
-            <h2 class="section__title">試飛場地安全隔離準則</h2>
-            <p class="section__subtitle">Safety &amp; Operating Limits</p>
-          </div>
-        </div>
-        <div class="safety__grid reveal">
-          <article class="safety-card safety-card--fod">
-            <h3 class="safety-card__title">進氣道吸入警戒區（FOD）</h3>
-            <p class="safety-card__text">運轉時嚴防異物吸入，人員與鬆散物應保持進氣前方安全距離；距離依機型於手冊中訂定。</p>
-          </article>
-          <article class="safety-card safety-card--exhaust">
-            <h3 class="safety-card__title">尾噴管後方危險區</h3>
-            <p class="safety-card__text">尾噴流高溫高衝擊，試飛時禁止人員進入後方危險扇形區域。</p>
-          </article>
-          <article class="safety-card safety-card--wide safety-card--cooling">
-            <h3 class="safety-card__title">關機強制冷卻</h3>
-            <p class="safety-card__text">關機後應執行散熱循環，於排氣溫度降至安全範圍前勿拔除主電源，以保護軸承與熱端零件。</p>
+            <a href="#contact" class="lineup-card__cta" data-prefill-model="ss160">索取報價</a>
           </article>
         </div>
       </div>
@@ -245,14 +213,24 @@
       <div class="container">
         <div class="section__header section__header--doc">
           <div class="section__header-body">
-            <h2 class="section__title">聯繫我們 · 產品詢價</h2>
-            <p class="section__subtitle">Contact &amp; Quotation</p>
-            <p class="section__desc">填寫表單說明需求，我們將提供規格書、報價與交期資訊。</p>
+            <h2 class="section__title">Contact Us</h2>
+            <p class="section__subtitle">聯繫我們 · 產品詢價</p>
           </div>
         </div>
+        <ul class="contact-channels reveal">
+          <li>
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/886989417957" target="_blank" rel="noopener noreferrer">0989-417-957</a>
+          </li>
+          <li>
+            <strong>Email</strong>
+            <a href="mailto:StanlyLee@hyperseek.com.tw">StanlyLee@hyperseek.com.tw</a>
+          </li>
+        </ul>
         <div class="contact__grid contact__grid--single">
           <form class="contact__form reveal" id="contactForm">
             <h3 class="contact__form-title">詢價表單</h3>
+            <p class="contact__form-lead">正式詢價問卷連結將另行提供；亦可先透過上方管道或下方表單與我們聯繫。</p>
             <div class="form-row">
               <div class="form-group">
                 <label for="name">姓名 <span class="form-required">*</span></label>
@@ -282,7 +260,7 @@
                   <option value="fq230">FQ230</option>
                   <option value="ss800">SS800</option>
                   <option value="ss1000">SS1000 / FQ1000</option>
-                  <option value="ss1600">SS1600 / FQ1600</option>
+                  <option value="ss160">SS160 / FQ1000</option>
                   <option value="undecided">尚未確定</option>
                 </select>
               </div>
