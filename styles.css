@@ -1795,11 +1795,34 @@ img {
   color: var(--color-accent);
 }
 
-.contact__form-lead {
-  font-size: 0.88rem;
+.contact__inquiry {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.contact__inquiry-note {
+  font-size: 0.92rem;
   color: var(--color-text-muted);
-  line-height: 1.65;
-  margin: -8px 0 20px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.contact__inquiry-btn {
+  min-width: 220px;
+  padding: 14px 32px;
+  font-size: 1rem;
+}
+
+.contact__inquiry-btn[aria-disabled='true'] {
+  opacity: 0.92;
+  cursor: not-allowed;
+}
+
+.contact__inquiry-pending {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
 }
 
 .lineup-grid {

@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  /** Google 表單／試算表詢價連結 — 有值時「填寫詢價問卷」按鈕會另開新分頁 */
+  const INQUIRY_SHEET_URL = '';
+
   const header = document.getElementById('header');
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
@@ -65,28 +68,20 @@
 
   window.addEventListener('scroll', highlightNav, { passive: true });
 
-  document.querySelectorAll('[data-prefill-model]').forEach(link => {
-    link.addEventListener('click', () => {
-      const select = document.getElementById('model');
-      const value = link.getAttribute('data-prefill-model');
-      if (select && value) select.value = value;
-    });
-  });
-
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('button[type="submit"]');
-      if (!btn) return;
-      const originalText = btn.textContent;
-      btn.textContent = '已送出，感謝詢價！';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        contactForm.reset();
-      }, 2800);
-    });
+  const inquiryBtn = document.getElementById('inquirySheetBtn');
+  const inquiryPending = document.getElementById('inquirySheetPending');
+  if (inquiryBtn) {
+    const sheetUrl = (INQUIRY_SHEET_URL || '').trim();
+    if (sheetUrl) {
+      inquiryBtn.href = sheetUrl;
+      inquiryBtn.removeAttribute('aria-disabled');
+    } else {
+      inquiryBtn.href = '#';
+      inquiryBtn.setAttribute('aria-disabled', 'true');
+      inquiryBtn.addEventListener('click', e => {
+        e.preventDefault();
+        if (inquiryPending) inquiryPending.hidden = false;
+      });
+    }
   }
 })();
