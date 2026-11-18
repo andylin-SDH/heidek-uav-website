@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1152" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="bgSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a3238"/>
+      <stop offset="55%" stop-color="#263028"/>
+      <stop offset="100%" stop-color="#1a2018"/>
+    </linearGradient>
+    <radialGradient id="haze" cx="78%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#76A74B" stop-opacity="0.14"/>
+      <stop offset="45%" stop-color="#76A74B" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#1a2018" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wingMetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d6dde4"/>
+      <stop offset="45%" stop-color="#8f9aa8"/>
+      <stop offset="100%" stop-color="#4d5661"/>
+    </linearGradient>
+    <linearGradient id="plume" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#fff7e8" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#f0a85a" stop-opacity="0.65"/>
+      <stop offset="70%" stop-color="#76A74B" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#76A74B" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="turbineCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8edf2"/>
+      <stop offset="55%" stop-color="#9aa7b4"/>
+      <stop offset="100%" stop-color="#3f484f"/>
+    </radialGradient>
+    <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="plumeBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <rect width="2048" height="1152" fill="url(#bgSky)"/>
+  <rect width="2048" height="1152" fill="url(#haze)"/>
+
+  <!-- forest silhouette -->
+  <path fill="#1d261c" opacity="0.92" d="M0 760 L0 1152 L2048 1152 L2048 820 Q1750 700 1520 760 Q1280 640 1040 720 Q760 660 520 750 Q260 690 0 760Z"/>
+  <path fill="#233026" opacity="0.55" d="M0 860 L0 1152 L2048 1152 L2048 900 Q1620 820 1280 900 Q920 840 560 920 Q320 880 0 860Z"/>
+
+  <!-- contrail arcs -->
+  <path d="M1120 220 C1320 280 1480 360 1650 520" stroke="#7a8e92" stroke-opacity="0.12" stroke-width="2" fill="none"/>
+  <path d="M1180 280 C1380 340 1520 420 1700 580" stroke="#9aa89a" stroke-opacity="0.1" stroke-width="3" fill="none"/>
+
+  <!-- delta wing UAV -->
+  <g transform="translate(1180 360) rotate(-6)">
+    <path d="M40 120 L520 60 L400 140 L120 210 Z" fill="url(#wingMetal)" opacity="0.92"/>
+    <path d="M140 150 L420 85 L380 120 L170 188 Z" fill="#bcc5ce" opacity="0.35"/>
+    <path d="M250 125 L360 100 L330 125 L260 145 Z" fill="#6a7380" opacity="0.5"/>
+    <!-- fuselage -->
+    <ellipse cx="300" cy="135" rx="118" ry="22" fill="#707986" opacity="0.95"/>
+    <!-- turbine intake -->
+    <circle cx="215" cy="135" r="34" fill="#2a2f34"/>
+    <circle cx="215" cy="135" r="28" fill="url(#turbineCore)"/>
+    <g opacity="0.85">
+      <path d="M215 113 L218 135 L215 157 L212 135Z" fill="#8a939a"/>
+      <path d="M197 125 L218 128 L239 125 L218 122Z" fill="#8a939a"/>
+      <path d="M197 145 L218 142 L239 145 L218 148Z" fill="#8a939a"/>
+      <path d="M233 125 L236 135 L233 145 L230 135Z" fill="#8a939a"/>
+    </g>
+    <!-- nozzle -->
+    <path d="M415 122 L455 132 L455 138 L415 148 Z" fill="#5d686f"/>
+  </g>
+
+  <!-- exhaust plume -->
+  <g filter="url(#plumeBlur)" opacity="0.9">
+    <ellipse cx="1620" cy="520" rx="420" ry="95" fill="url(#plume)" transform="rotate(-8 1620 520)"/>
+    <ellipse cx="1720" cy="510" rx="280" ry="60" fill="#f5c47a" fill-opacity="0.35" transform="rotate(-10 1720 510)"/>
+  </g>
+  <ellipse cx="1540" cy="498" rx="90" ry="28" fill="#fff5df" fill-opacity="0.65" filter="url(#softBlur)"/>
+
+  <!-- subtle turbine disc (metaphor) -->
+  <g transform="translate(1540 490)" opacity="0.35">
+    <circle r="46" fill="none" stroke="#76A74B" stroke-width="2" stroke-dasharray="8 10"/>
+    <circle r="32" fill="none" stroke="#c8d4dc" stroke-width="1.2" opacity="0.7"/>
+  </g>
+
+  <!-- left text-side vignette -->
+  <rect width="2048" height="1152" fill="url(#bgSky)" opacity="0.15" style="mix-blend-mode:multiply"/>
+  <path d="M0 0 H1180 V1152 H0 Z" fill="#181615" fill-opacity="0.55"/>
+  <path d="M0 0 H1020 V1152 H0 Z" fill="#141312" fill-opacity="0.42"/>
+</svg>

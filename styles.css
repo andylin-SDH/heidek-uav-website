@@ -292,6 +292,14 @@ img {
 }
 
 .hero--ref-v3 .hero__kv-img { object-position: 52% 45%; }
+.hero--ref-delta .hero__kv-img { object-position: 68% 42%; }
+.hero--ref-delta .hero__overlay {
+  background:
+    linear-gradient(102deg, rgba(24, 22, 23, 0.96) 0%, rgba(24, 22, 23, 0.88) 36%, rgba(24, 22, 23, 0.4) 62%, rgba(24, 22, 23, 0.08) 100%),
+    linear-gradient(to top, rgba(24, 22, 23, 0.78) 0%, transparent 45%),
+    radial-gradient(ellipse 48% 40% at 74% 44%, rgba(118, 167, 75, 0.14) 0%, transparent 68%);
+}
+
 .hero--ref-v3 .hero__overlay {
   background:
     linear-gradient(108deg, rgba(22, 20, 20, 0.95) 0%, rgba(22, 20, 20, 0.78) 38%, rgba(22, 20, 20, 0.32) 64%, rgba(22, 20, 20, 0.06) 100%),
@@ -302,13 +310,15 @@ img {
 @media (max-width: 768px) {
   .hero--ref-v1 .hero__kv-img,
   .hero--ref-v2 .hero__kv-img,
-  .hero--ref-v3 .hero__kv-img {
+  .hero--ref-v3 .hero__kv-img,
+  .hero--ref-delta .hero__kv-img {
     object-position: 75% center;
   }
 
   .hero--ref-v1 .hero__overlay,
   .hero--ref-v2 .hero__overlay,
-  .hero--ref-v3 .hero__overlay {
+  .hero--ref-v3 .hero__overlay,
+  .hero--ref-delta .hero__overlay {
     background:
       linear-gradient(180deg, rgba(24, 22, 23, 0.94) 0%, rgba(24, 22, 23, 0.9) 100%);
   }
