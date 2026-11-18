@@ -1,0 +1,11 @@
+---
+description: 禁止未經使用者明確同意修改官網首頁 Hero 主視覺
+globs: index.html, styles.css, hero-kv-preview.html, assets/images/hero-*
+alwaysApply: true
+---
+
+## Hero 主視覺（鎖定）
+
+- 官網 `index.html` 的 `#hero` 僅使用已確認版本：`hero--ref-v1` + `hero-ref-v1-intake.webp/jpg`。
+- **不得**更換 Hero 圖檔、class、`hero__overlay`、標題結構，除非使用者在本輪對話中明確說「可以換 Hero」並指名方案（如 V2/V3）。
+- 新 Hero 方案只放在 `hero-kv-preview.html` 比稿，不直接上線。
