@@ -1825,47 +1825,76 @@ img {
   color: var(--color-text-muted);
 }
 
-.lineup-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+.lineup-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
   margin-bottom: 28px;
 }
 
 .lineup-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 0 0 24px;
+  padding: 24px;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition);
-  overflow: hidden;
 }
 
-.lineup-card__media {
+.lineup-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--color-gradient);
+}
+
+.lineup-card__head {
+  margin-bottom: 16px;
+}
+
+.lineup-card__name {
+  font-size: 1.12rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.lineup-card__tier {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.lineup-card__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lineup-card__gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(118, 167, 75, 0.06) 0%, transparent 70%),
-    linear-gradient(165deg, #f8f9fb 0%, #eef1f4 100%);
-  display: flex;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: #f8f9fb;
+}
+
+.lineup-card__gallery--empty {
+  min-height: clamp(120px, 22vw, 200px);
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.lineup-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.lineup-card__media--empty {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
+  display: flex;
   background: repeating-linear-gradient(
     -45deg,
     var(--color-bg-elevated),
@@ -1873,58 +1902,20 @@ img {
     #eceef1 8px,
     #eceef1 16px
   );
+  border-radius: var(--radius);
+  border: 1px dashed var(--color-border);
 }
 
-.lineup-card__name,
-.lineup-card__tier,
-.lineup-card__text,
-.lineup-card__angles,
-.lineup-card__cta {
-  margin-left: 24px;
-  margin-right: 24px;
-}
-
-.lineup-card__name {
-  margin-top: 20px;
-}
-
-.lineup-card__angles {
-  margin-top: 12px;
-  font-size: 0.85rem;
-}
-
-.lineup-card__angles summary {
-  cursor: pointer;
-  color: var(--color-accent-dark);
-  font-weight: 600;
-  list-style: none;
-}
-
-.lineup-card__angles summary::-webkit-details-marker {
-  display: none;
-}
-
-.lineup-card__thumbs {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.lineup-card__thumbs img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-elevated);
+.lineup-card__gallery--empty p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
 }
 
 .lineup-card__cta {
   display: inline-flex;
   align-self: flex-start;
-  margin-top: auto;
-  padding-top: 16px;
+  margin-top: 18px;
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--color-accent-dark);
@@ -1935,30 +1926,11 @@ img {
   color: var(--color-accent);
 }
 
-.lineup-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
-.lineup-card__name {
-  font-size: 1.05rem;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-
-.lineup-card__tier {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  letter-spacing: 0.04em;
-  margin-bottom: 14px;
-}
-
-.lineup-card__text {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  line-height: 1.7;
+@media (max-width: 640px) {
+  .lineup-card__gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 
 .lineup-note {
@@ -2054,21 +2026,6 @@ img {
 
 .footer__links--compact a:hover {
   color: var(--color-accent);
-}
-
-.lineup-card {
-  position: relative;
-}
-
-.lineup-card:not(.lineup-card--no-media)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--color-gradient);
-  z-index: 1;
 }
 
 /* ===== Spec Table ===== */
