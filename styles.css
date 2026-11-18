@@ -1752,7 +1752,7 @@ img {
 .product-series-list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 20px;
 }
 
 .product-series {
@@ -1760,7 +1760,7 @@ img {
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 18px 20px 16px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -1778,15 +1778,15 @@ img {
 .product-series__name {
   font-size: 1.15rem;
   font-weight: 800;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .product-series__specs {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 10px 14px;
-  margin: 0 0 18px;
-  padding: 14px 16px;
+  gap: 8px 12px;
+  margin: 0 0 12px;
+  padding: 10px 12px;
   background: var(--color-bg-elevated);
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
@@ -1814,28 +1814,47 @@ img {
 .product-series__gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 8px;
+  align-items: center;
 }
 
 .product-series__gallery img,
 .product-series__shot {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  max-height: clamp(92px, 11.5vw, 148px);
+  margin-inline: auto;
   object-fit: contain;
+  object-position: center;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
   background: #f8f9fb;
+  padding: 4px 6px;
+  box-sizing: border-box;
+}
+
+.product-series__shot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: none;
+  padding: 4px 6px;
 }
 
 .product-series__shot img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: clamp(92px, 11.5vw, 148px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .product-series__gallery--empty {
-  min-height: clamp(100px, 18vw, 160px);
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1857,7 +1876,7 @@ img {
 
 .product-series__cta {
   display: inline-flex;
-  margin-top: 16px;
+  margin-top: 10px;
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--color-accent-dark);
@@ -1879,7 +1898,13 @@ img {
   }
 
   .product-series__gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .product-series__gallery img,
+  .product-series__shot img {
+    max-height: clamp(72px, 22vw, 110px);
   }
 }
 
