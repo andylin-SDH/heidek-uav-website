@@ -1846,11 +1846,13 @@ img {
 
 .lineup-card__media {
   aspect-ratio: 4 / 3;
-  background: var(--color-bg-elevated);
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(118, 167, 75, 0.06) 0%, transparent 70%),
+    linear-gradient(165deg, #f8f9fb 0%, #eef1f4 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 20px;
   border-bottom: 1px solid var(--color-border);
 }
 
