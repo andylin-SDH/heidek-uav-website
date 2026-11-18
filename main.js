@@ -2,7 +2,7 @@
   'use strict';
 
   /** Google 表單／試算表詢價連結 — 有值時「填寫詢價問卷」按鈕會另開新分頁 */
-  const INQUIRY_SHEET_URL = '';
+  const INQUIRY_SHEET_URL = 'https://forms.gle/j1BCsbc1otXD1Vk27';
 
   const header = document.getElementById('header');
   const navToggle = document.getElementById('navToggle');
