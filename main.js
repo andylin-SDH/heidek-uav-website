@@ -246,7 +246,7 @@
 
     function seedPlumeParticles() {
       const rect = plumeCanvas.getBoundingClientRect();
-      const count = Math.min(42, Math.floor(rect.width / 12));
+      const count = Math.min(72, Math.floor(rect.width / 9));
       plumeParticles = Array.from({ length: count }, () => ({
         x: Math.random() * rect.width,
         y: Math.random() * rect.height,
@@ -262,8 +262,8 @@
       const rect = plumeCanvas.getBoundingClientRect();
       plumeCtx.clearRect(0, 0, rect.width, rect.height);
 
-      const originX = rect.width * 0.92;
-      const originY = rect.height * 0.82;
+      const originX = rect.width * (0.82 + Math.sin(Date.now() / 2400) * 0.06);
+      const originY = rect.height * (0.78 + Math.cos(Date.now() / 3200) * 0.04);
 
       plumeParticles.forEach(p => {
         p.x += p.vx;
@@ -279,7 +279,7 @@
         }
 
         const t = p.life;
-        const alpha = (1 - t) * 0.55;
+        const alpha = (1 - t) * 0.72;
         plumeCtx.beginPath();
         plumeCtx.fillStyle = `rgba(255, ${Math.floor(140 + 70 * (1 - t))}, ${Math.floor(60 + 40 * t)}, ${alpha})`;
         plumeCtx.arc(p.x, p.y, p.size * (1 + t * 0.6), 0, Math.PI * 2);
