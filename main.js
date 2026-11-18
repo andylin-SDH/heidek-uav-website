@@ -225,4 +225,110 @@
       });
     }
   }
+
+  const plumeCanvas = document.getElementById('specsPlumeCanvas');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (plumeCanvas && !prefersReducedMotion) {
+    const plumeCtx = plumeCanvas.getContext('2d');
+    let plumeVisible = false;
+    let plumeRaf = 0;
+    let plumeParticles = [];
+
+    function resizePlumeCanvas() {
+      const rect = plumeCanvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      plumeCanvas.width = Math.max(1, Math.floor(rect.width * dpr));
+      plumeCanvas.height = Math.max(1, Math.floor(rect.height * dpr));
+      plumeCtx.setTransform(1, 0, 0, 1, 0, 0);
+      plumeCtx.scale(dpr, dpr);
+    }
+
+    function seedPlumeParticles() {
+      const rect = plumeCanvas.getBoundingClientRect();
+      const count = Math.min(42, Math.floor(rect.width / 12));
+      plumeParticles = Array.from({ length: count }, () => ({
+        x: Math.random() * rect.width,
+        y: Math.random() * rect.height,
+        vx: -(0.35 + Math.random() * 1.1),
+        vy: -(0.2 + Math.random() * 0.65),
+        life: Math.random(),
+        size: 1.2 + Math.random() * 2.6,
+      }));
+    }
+
+    function stepPlumeFrame() {
+      if (!plumeVisible) return;
+      const rect = plumeCanvas.getBoundingClientRect();
+      plumeCtx.clearRect(0, 0, rect.width, rect.height);
+
+      const originX = rect.width * 0.92;
+      const originY = rect.height * 0.82;
+
+      plumeParticles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life += 0.006;
+        if (p.x < -8 || p.y < -8 || p.life > 1) {
+          p.x = originX + (Math.random() - 0.5) * 24;
+          p.y = originY + (Math.random() - 0.5) * 16;
+          p.vx = -(0.5 + Math.random() * 1.4);
+          p.vy = -(0.25 + Math.random() * 0.9);
+          p.life = 0;
+          p.size = 1.2 + Math.random() * 2.8;
+        }
+
+        const t = p.life;
+        const alpha = (1 - t) * 0.55;
+        plumeCtx.beginPath();
+        plumeCtx.fillStyle = `rgba(255, ${Math.floor(140 + 70 * (1 - t))}, ${Math.floor(60 + 40 * t)}, ${alpha})`;
+        plumeCtx.arc(p.x, p.y, p.size * (1 + t * 0.6), 0, Math.PI * 2);
+        plumeCtx.fill();
+
+        plumeCtx.beginPath();
+        plumeCtx.fillStyle = `rgba(118, 167, 75, ${alpha * 0.35})`;
+        plumeCtx.arc(p.x + 6, p.y + 2, p.size * 0.7, 0, Math.PI * 2);
+        plumeCtx.fill();
+      });
+
+      plumeRaf = requestAnimationFrame(stepPlumeFrame);
+    }
+
+    function startPlume() {
+      if (plumeVisible) return;
+      plumeVisible = true;
+      resizePlumeCanvas();
+      seedPlumeParticles();
+      plumeRaf = requestAnimationFrame(stepPlumeFrame);
+    }
+
+    function stopPlume() {
+      plumeVisible = false;
+      cancelAnimationFrame(plumeRaf);
+      const rect = plumeCanvas.getBoundingClientRect();
+      plumeCtx.clearRect(0, 0, rect.width, rect.height);
+    }
+
+    const specsSection = document.getElementById('specs');
+    const plumeObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) startPlume();
+          else stopPlume();
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    if (specsSection) plumeObserver.observe(specsSection);
+    window.addEventListener(
+      'resize',
+      () => {
+        if (!plumeVisible) return;
+        resizePlumeCanvas();
+        seedPlumeParticles();
+      },
+      { passive: true }
+    );
+  }
 })();
