@@ -64,7 +64,7 @@
             <p class="section__desc">各型號規格與產品照整合如下；詳細規格書與報價請透過下方聯繫方式洽詢。</p>
           </div>
         </div>
-        <div class="product-series-list reveal">
+        <div class="product-series-list product-series-list--stagger reveal">
           <article class="product-series">
             <h3 class="product-series__name">FQ230</h3>
             <dl class="product-series__specs">
@@ -202,6 +202,28 @@
       </div>
     </div>
   </footer>
+
+  <div class="lightbox" id="productLightbox" hidden aria-hidden="true">
+    <div class="lightbox__scrim" data-lightbox-close tabindex="-1" aria-hidden="true"></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="關閉預覽">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="上一張">
+        <span aria-hidden="true">&#8249;</span>
+      </button>
+      <figure class="lightbox__figure">
+        <div class="lightbox__stage">
+          <img class="lightbox__img" id="lightboxImg" src="" alt="">
+        </div>
+        <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+        <p class="lightbox__counter" id="lightboxCounter" aria-live="polite"></p>
+      </figure>
+      <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="下一張">
+        <span aria-hidden="true">&#8250;</span>
+      </button>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
